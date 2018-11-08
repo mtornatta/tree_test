@@ -104,6 +104,33 @@ class TestTree(unittest.TestCase):
 #traverse down the side of the tree that goes in the right direction
 #if you find the value stop and recurse back to the root
 #if you reach the end of the tree return false to the root
+    def test_check_if_value_exists(self):
+        new_tree = bst(20)
+        node1 = bst(10)
+        node2 = bst(25)
+        node3 = bst(30)
+        node4 = bst(4)
+        node5 = bst(89)
+        new_tree.add(node1)
+        new_tree.add(node2)
+        new_tree.add(node3)
+        new_tree.add(node4)
+        new_tree.add(node5)
+        self.assertTrue(new_tree.find(25))
+
+    def test_check_if_value_doesnt_exist(self):
+        new_tree = bst(20)
+        node1 = bst(10)
+        node2 = bst(25)
+        node3 = bst(30)
+        node4 = bst(4)
+        node5 = bst(89)
+        new_tree.add(node1)
+        new_tree.add(node2)
+        new_tree.add(node3)
+        new_tree.add(node4)
+        new_tree.add(node5)
+        self.assertFalse(new_tree.find(200))
 
 #-----------------
 #     Insert

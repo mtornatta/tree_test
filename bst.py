@@ -31,6 +31,17 @@ class bst:
 
         return node
 
+    def find(self, value):
+        if self.has_child():
+            if self.value == value:
+                return True
+            elif self.value > value:
+                return self.left_child.find(value)
+            elif self.value < value:
+                return self.right_child.find(value)
+        else:
+            return False
+
     def get_parent(self):
         return self.parent
 
