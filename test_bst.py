@@ -9,13 +9,43 @@ class TestTree(unittest.TestCase):
 #---------------------------------
 #     Create an Empty Tree
 #---------------------------------
+
+#test if a new tree exists
     def test_empty_instantiation(self):
         new_tree = bst()
-
-#test if it has a parent (itself)
+        self.assertTrue(new_tree != None)
+#test if the tree has a parent element
+    def test_for_parent_when_empty(self):
+        new_tree = bst()
+        self.assertTrue(new_tree.parent == None)
 #test if the bst is the root (if parent is itself)
-#test if it has potential for right and left child (should be empty)
+    def test_if_root(self):
+        new_tree = bst()
+        self.assertTrue(new_tree.is_root())
+#test if it has any children (should not, empty tree)
+    def test_for_child_when_empty(self):
+        new_tree = bst()
+        self.assertFalse(new_tree.has_child())
+
+#test if it has a right child element (should not, empty tree)
+    def test_for_right_when_empty(self):
+        new_tree = bst()
+        self.assertFalse(new_tree.has_right_child())
+
+#test if it has a left child element (should not, empty tree)
+    def test_for_left_when_empty(self):
+        new_tree = bst()
+        self.assertFalse(new_tree.has_left_child())
+
+#test if it has a both a right and left child element (should not, empty tree)
+    def test_for_both_when_empty(self):
+        new_tree = bst()
+        self.assertFalse(new_tree.has_both_children())
+
 #test for height value (should be 0)
+    def test_height_when_empty(self):
+        new_tree = bst()
+        self.assertTrue(new_tree.height == 0)
 
 #---------------------------------------------
 #  Create a Tree with left and right nodes
