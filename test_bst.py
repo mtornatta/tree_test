@@ -9,6 +9,5 @@ class TestTree(unittest.TestCase):
     def test_empty_instantiation(self):
         BinarySearchTree()
 
-
 if __name__ == '__main__':
     unittest.main()
