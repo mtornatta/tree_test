@@ -15,7 +15,7 @@ class bst:
     def add(self, node):
         if self.value > node.value:
             if self.has_left_child():
-                return self.add(node.left_child)
+                return self.left_child.add(node)
             else:
                 self.left_child = node
                 node.parent = self
@@ -23,7 +23,7 @@ class bst:
 
         elif self.value < node.value:
             if self.has_right_child():
-                self.add(node.right_child)
+                self.right_child.add(node)
             else:
                 self.right_child = node
                 node.parent = self

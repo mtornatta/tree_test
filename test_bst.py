@@ -79,9 +79,22 @@ class TestTree(unittest.TestCase):
 #     Create a tree with more than one level
 #-----------------------------------------------
 
-#add more than one level to a Tree
-#recurse through tree
-#check height
+#add more than one level to a Tree to the right
+    def test_add_multiple_nodes_right(self):
+        new_tree = bst(20)
+        larger_node = bst(21)
+        even_larger_node = bst(22)
+        new_tree.add(larger_node)
+        new_tree.add(even_larger_node)
+        self.assertTrue(new_tree.get_right_child().get_right_child().value == even_larger_node.value)
+#add more than one level to a Tree to the left
+    def test_add_multiple_nodes_left(self):
+        new_tree = bst(20)
+        smaller_node = bst(19)
+        even_smaller_node = bst(18)
+        new_tree.add(smaller_node)
+        new_tree.add(even_smaller_node)
+        self.assertTrue(new_tree.get_left_child().get_left_child().value == even_smaller_node.value)
 
 #-----------------
 #     Find
