@@ -1,4 +1,4 @@
 #bst.py by Michael Tornatta
-class BinarySearchTree:
-
+class bst:
     def __init__(self):
+        pass
