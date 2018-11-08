@@ -42,21 +42,38 @@ class TestTree(unittest.TestCase):
         new_tree = bst()
         self.assertFalse(new_tree.has_both_children())
 
-#test for height value (should be 0)
-    def test_height_when_empty(self):
-        new_tree = bst()
-        self.assertTrue(new_tree.height == 0)
-
 #---------------------------------------------
 #  Create a Tree with left and right nodes
 #---------------------------------------------
 
 #test if you can create a bst with content
-#test what happens when you add an element smaller than the parent
+    def test_new_bst_with_value(self):
+        new_tree = bst(20)
+        self.assertTrue(new_tree.value != None)
 #test what happens when you add an element larger than the parent
-#check for left and right values after adding
-#check for left and right parent (should be the root)
-#check for height of the tree after adding a node
+    def test_add_node_when_larger(self):
+        new_tree = bst(20)
+        larger_node = bst(21)
+        new_tree.add(larger_node)
+        self.assertTrue(new_tree.get_right_child().value == larger_node.value)
+#test what happens when you add an element smaller than the parent
+    def test_add_node_when_smaller(self):
+        new_tree = bst(20)
+        smaller_node = bst(19)
+        new_tree.add(smaller_node)
+        self.assertTrue(new_tree.get_left_child().value == smaller_node.value)
+#check the parent of left
+    def test_parent_of_left(self):
+        new_tree = bst(20)
+        smaller_node = bst(19)
+        new_tree.add(smaller_node)
+        self.assertTrue(new_tree.get_left_child().get_parent().value == new_tree.value)
+#check the parent of right
+    def test_parent_of_right(self):
+        new_tree = bst(20)
+        larger_node = bst(21)
+        new_tree.add(larger_node)
+        self.assertTrue(new_tree.get_right_child().get_parent().value == new_tree.value)
 
 #-----------------------------------------------
 #     Create a tree with more than one level
